@@ -1,5 +1,10 @@
 package com.example.northwind.business.abstracts;
 
-public class ProductService {
+import java.util.List;
 
+import com.example.northwind.entities.concretes.Product;
+
+public interface ProductService {
+	
+	List<Product> getAll();
 }

@@ -14,14 +14,15 @@ import com.example.northwind.entities.concretes.Product;
 public class ProductsController {
 	
 	
-	private ProductService productservice;
+	private ProductService productService;
 	
 	public ProductsController(ProductService productservice) {
 		super();
-		this.productservice = productservice;
+		this.productService = productservice;
 	}
 
 	@GetMapping("/getall")
 	public List<Product> getAll(){
+		return this.productService.getAll();
 }
 }
