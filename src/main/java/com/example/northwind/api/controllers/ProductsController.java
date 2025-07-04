@@ -1,3 +1,5 @@
+
+
 package com.example.northwind.api.controllers;
 
 import java.util.List;
@@ -13,16 +15,21 @@ import com.example.northwind.entities.concretes.Product;
 @RequestMapping("/api/products")
 public class ProductsController {
 	
-	
 	private ProductService productService;
 	
-	public ProductsController(ProductService productservice) {
+	public ProductsController(ProductService productService) {
 		super();
-		this.productService = productservice;
+		this.productService = productService;
 	}
 
 	@GetMapping("/getall")
 	public List<Product> getAll(){
 		return this.productService.getAll();
-}
+	}
+	
+	// Root endpoint için geçici çözüm
+	@GetMapping("/")
+	public String home() {
+		return "Northwind API is running! Visit /api/products/getall to see products.";
+	}
 }

@@ -3,17 +3,16 @@ package com.example.northwind.entities.concretes;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
-
 
 @Entity
 @Table(name="products")
 public class Product {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="product_id")
 	private int id;
 	
@@ -36,7 +35,7 @@ public class Product {
 		
 	}
 	
-	public Product(int id, int categoryId, String productName, int unitPrice, short unitsInStock,
+	public Product(int id, int categoryId, String productName, double unitPrice, short unitsInStock,
 			String quantityPerUnit) {
 		super();
 		this.id = id;

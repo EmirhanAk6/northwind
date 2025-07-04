@@ -21,7 +21,7 @@ public class ProductManager implements ProductService{
 	}
 
 	@Autowired
-	public ProductManager(ProductDao productdao, ProductDao productDao) {
+	public ProductManager(ProductDao productdao,ProductDao productDao) {
 		super();
 		this.productDao = productDao;
 	}
